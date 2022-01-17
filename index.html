@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Title -->
+    <title>Cart</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="assets/icon-fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/icon-bootstrap/bootstrap-icons.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- ========= Preloader ========= -->
+    <div id="preloader">
+        <div class="loader-wrap">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <!-- ========= Header ========= -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!-- cart-header -->
+                    <div class="card cart-header">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div class="align-self-center">
+                                    <h2>My Cart Items</h2>
+                                </div>
+                                <div class="align-self-center">
+                                    <h2>Cart Total: <span class="cart-total"></span> Tk</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cart-content -->
+                    <div class="card cart-content">
+                        <div class="card-body">
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            </div>
+                            <div class="table-responsive book-table">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <img src="./assets/images/book-1.jpg" class="img-fluid" alt="">
+                                            </td>
+                                            <td>
+                                                <p><a href="#" class="book-name">চল্</a></p>
+                                                <p><a href="#" class="book-writer">অন্তিক মাহমুদ</a></p>
+                                                <p><button type="button" class="delete-btn"><i
+                                                            class="far fa-trash-alt text-danger mt-2"></i></button></p>
+                                            </td>
+                                            <td>
+                                                <div class="input-group">
+                                                    <button class="btn btn-sm btn-secondary decrement-btn"
+                                                        type="button"><i class="fas fa-minus"></i></button>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm quantity-input" value="1"
+                                                        disabled>
+                                                    <button class="btn btn-sm btn-secondary increment-btn"
+                                                        type="button"><i class="fas fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p>Tk.<span class="book-price">200</span></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="./assets/images/book-2.jpg" class="img-fluid" alt="">
+                                            </td>
+                                            <td>
+                                                <p><a href="#" class="book-name">মাসুদ রানা</a></p>
+                                                <p><a href="#" class="book-writer">কাজী মায়মুর হোসেন</a></p>
+                                                <p><button type="button" class="delete-btn"><i
+                                                            class="far fa-trash-alt text-danger mt-2"></i></button></p>
+                                            </td>
+                                            <td>
+                                                <div class="input-group">
+                                                    <button class="btn btn-sm btn-secondary decrement-btn"
+                                                        type="button"><i class="fas fa-minus"></i></button>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm quantity-input" value="1"
+                                                        disabled>
+                                                    <button class="btn btn-sm btn-secondary increment-btn"
+                                                        type="button"><i class="fas fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p>Tk.<span class="book-price">150</span></p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="no-item">Your cart is empty</p>
+                            <ul class="list-inline text-md-end">
+                                <li class="list-inline-item"><button type="button" class="btn btn-outline-purple"
+                                        id="empty-cart">Empty Cart
+                                    </button></li>
+                                <li class="list-inline-item"><a href="https://subrinalisa.github.io/Checkout/"
+                                        class="btn btn-yellow shipping-btn">Go to Checkout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card checkout">
+                        <div class="card-header">
+                            <h2 class="card-title">Checkout Summary</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <select class="form-select shipping-address">
+                                    <option value="1">Dhaka</option>
+                                    <option value="2">Others</option>
+                                </select>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Subtotal</td>
+                                            <td><span class="sub-total"></span> Tk</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shipping</td>
+                                            <td><span class="shipping-cost"></span> Tk</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td><span class="total-cost"></span> Tk</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Payable Total</th>
+                                            <th><span class="payable-cost"></span> Tk</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ========= Js Files ========= -->
+    <!-- Jquery Js -->
+    <script src="assets/js/jquery-1.12.4.js"></script>
+    <!-- Popper Js -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Custom Js -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

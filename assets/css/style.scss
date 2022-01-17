@@ -1,0 +1,383 @@
+@charset "UTF-8";
+/*--------------------------------------------------------------------
+Global
+---------------------------------------------------------------------*/
+$font: sans-serif;
+$text-color: #666;
+$blue-color: #212529;
+$purple-color: #87298f;
+$yellow-color: #f90;
+$border-radius: 5px;
+
+@mixin fonts($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin typography-uppercase {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@mixin bg-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin transition {
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: sans-serif;
+    @include fonts(16px, 400, $text-color);
+    background: #f1f2f4;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+    margin: 0;
+}
+
+small {
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+i,
+svg {
+    display: inline-block;
+    pointer-events: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.input-group {
+    flex-wrap: nowrap;
+}
+
+.btn:focus,
+.navbar-toggler:focus,
+.form-control:focus,
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.card {
+    border-radius: $border-radius;
+}
+
+.card-title {
+    @include fonts(18px, 500, $blue-color);
+    margin: 0;
+}
+
+.display-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-outline-purple {
+    @include fonts(16px, 500, $purple-color);
+    border-color: $purple-color;
+    @include transition;
+}
+
+.btn-outline-purple:hover {
+    color: #fff;
+    background: $purple-color;
+}
+
+.btn-yellow {
+    @include fonts(16px, 500, #fff !important);
+    border-color: $yellow-color;
+    background: $yellow-color;
+    @include transition;
+}
+
+/*--------------------------------------------------------------------
+Preloader
+---------------------------------------------------------------------*/
+#preloader {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.loader-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    margin: 30px auto 40px;
+    position: relative;
+}
+
+.loader:before {
+    content: "";
+    width: 50px;
+    height: 5px;
+    border-radius: 50%;
+    background: #000;
+    opacity: 0.1;
+    position: absolute;
+    top: 59px;
+    left: 0;
+    animation: shadow .5s linear infinite;
+}
+
+.loader:after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    background: $purple-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loading .5s linear infinite;
+}
+
+@-webkit-keyframes loading {
+    17% {
+        border-bottom-right-radius: 3px;
+    }
+
+    25% {
+        transform: translateY(9px) rotate(22.5deg);
+    }
+
+    50% {
+        transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+        border-bottom-right-radius: 40px;
+    }
+
+    75% {
+        transform: translateY(9px) rotate(67.5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(90deg);
+    }
+}
+
+@keyframes loading {
+    17% {
+        border-bottom-right-radius: 3px;
+    }
+
+    25% {
+        transform: translateY(9px) rotate(22.5deg);
+    }
+
+    50% {
+        transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+        border-bottom-right-radius: 40px;
+    }
+
+    75% {
+        transform: translateY(9px) rotate(67.5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(90deg);
+    }
+}
+
+@-webkit-keyframes shadow {
+
+    0%,
+    100% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1);
+    }
+}
+
+@keyframes shadow {
+
+    0%,
+    100% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1);
+    }
+}
+
+/*--------------------------------------------------------------------
+Header
+---------------------------------------------------------------------*/
+header {
+    padding: 50px 0;
+
+    table {
+        font-size: 14px;
+    }
+
+    .cart-header {
+        margin-bottom: 20px;
+
+        h2 {
+            @include fonts(22px, 500, $blue-color);
+        }
+    }
+
+    .cart-content {
+        margin-bottom: 20px;
+
+        table {
+            white-space: nowrap;
+
+            td {
+                vertical-align: middle;
+            }
+
+            img {
+                max-width: 70px;
+            }
+
+            .book-name {
+                color: $blue-color;
+            }
+
+            .book-writer {
+                color: $text-color;
+            }
+
+            .form-control {
+                text-align: center;
+                min-width: 80px;
+                max-width: 100px;
+                border-color: #f1f1f1;
+            }
+
+            .btn-secondary {
+                color: $blue-color;
+                border-color: #f1f1f1;
+                background-color: #f1f1f1;
+            }
+        }
+    }
+
+    .cart-footer {
+        margin-bottom: 20px;
+    }
+
+    .checkout {
+        table {
+            tr:last-child th {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+.alert {
+    display: none;
+}
+
+.delete-btn {
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+}
+
+.undo-btn {
+    font-weight: 600;
+    color: red;
+    @extend .delete-btn;
+}
+
+.no-item {
+    text-align: center;
+    margin-bottom: 16px;
+    display: none;
+}
+
+/*--------------------------------------------------------------------
+Responsive
+---------------------------------------------------------------------*/
+@media (max-width: 767.98px) {
+    header {
+        .cart-header h2 {
+            font-size: 16px;
+        }
+    }
+}

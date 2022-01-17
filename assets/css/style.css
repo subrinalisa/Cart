@@ -1,0 +1,370 @@
+/*--------------------------------------------------------------------
+Global
+---------------------------------------------------------------------*/
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+  background: #f1f2f4;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+          box-shadow: inset 0 0 5px grey;
+  border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+
+small {
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+}
+
+i,
+svg {
+  display: inline-block;
+  pointer-events: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.input-group {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.btn:focus,
+.navbar-toggler:focus,
+.form-control:focus,
+.accordion-button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.card {
+  border-radius: 5px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #212529;
+  margin: 0;
+}
+
+.display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.btn-outline-purple {
+  font-size: 16px;
+  font-weight: 500;
+  color: #87298f;
+  border-color: #87298f;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-purple:hover {
+  color: #fff;
+  background: #87298f;
+}
+
+.btn-yellow {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff !important;
+  border-color: #f90;
+  background: #f90;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/*--------------------------------------------------------------------
+Preloader
+---------------------------------------------------------------------*/
+#preloader {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.loader-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  margin: 30px auto 40px;
+  position: relative;
+}
+
+.loader:before {
+  content: "";
+  width: 50px;
+  height: 5px;
+  border-radius: 50%;
+  background: #000;
+  opacity: 0.1;
+  position: absolute;
+  top: 59px;
+  left: 0;
+  -webkit-animation: shadow .5s linear infinite;
+          animation: shadow .5s linear infinite;
+}
+
+.loader:after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+  background: #87298f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: loading .5s linear infinite;
+          animation: loading .5s linear infinite;
+}
+
+@-webkit-keyframes loading {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+  25% {
+    -webkit-transform: translateY(9px) rotate(22.5deg);
+            transform: translateY(9px) rotate(22.5deg);
+  }
+  50% {
+    -webkit-transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+            transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+  75% {
+    -webkit-transform: translateY(9px) rotate(67.5deg);
+            transform: translateY(9px) rotate(67.5deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(90deg);
+            transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes loading {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+  25% {
+    -webkit-transform: translateY(9px) rotate(22.5deg);
+            transform: translateY(9px) rotate(22.5deg);
+  }
+  50% {
+    -webkit-transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+            transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+  75% {
+    -webkit-transform: translateY(9px) rotate(67.5deg);
+            transform: translateY(9px) rotate(67.5deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(90deg);
+            transform: translateY(0) rotate(90deg);
+  }
+}
+
+@-webkit-keyframes shadow {
+  0%,
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  50% {
+    -webkit-transform: scale(1.2, 1);
+            transform: scale(1.2, 1);
+  }
+}
+
+@keyframes shadow {
+  0%,
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  50% {
+    -webkit-transform: scale(1.2, 1);
+            transform: scale(1.2, 1);
+  }
+}
+
+/*--------------------------------------------------------------------
+Header
+---------------------------------------------------------------------*/
+header {
+  padding: 50px 0;
+}
+
+header table {
+  font-size: 14px;
+}
+
+header .cart-header {
+  margin-bottom: 20px;
+}
+
+header .cart-header h2 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #212529;
+}
+
+header .cart-content {
+  margin-bottom: 20px;
+}
+
+header .cart-content table {
+  white-space: nowrap;
+}
+
+header .cart-content table td {
+  vertical-align: middle;
+}
+
+header .cart-content table img {
+  max-width: 70px;
+}
+
+header .cart-content table .book-name {
+  color: #212529;
+}
+
+header .cart-content table .book-writer {
+  color: #666;
+}
+
+header .cart-content table .form-control {
+  text-align: center;
+  min-width: 80px;
+  max-width: 100px;
+  border-color: #f1f1f1;
+}
+
+header .cart-content table .btn-secondary {
+  color: #212529;
+  border-color: #f1f1f1;
+  background-color: #f1f1f1;
+}
+
+header .cart-footer {
+  margin-bottom: 20px;
+}
+
+header .checkout table tr:last-child th {
+  border-bottom: none;
+}
+
+.alert {
+  display: none;
+}
+
+.delete-btn, .undo-btn {
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+}
+
+.undo-btn {
+  font-weight: 600;
+  color: red;
+}
+
+.no-item {
+  text-align: center;
+  margin-bottom: 16px;
+  display: none;
+}
+
+/*--------------------------------------------------------------------
+Responsive
+---------------------------------------------------------------------*/
+@media (max-width: 767.98px) {
+  header .cart-header h2 {
+    font-size: 16px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
